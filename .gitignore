@@ -1,4 +1,5 @@
 app/node_modules
 package-lock.json
+app/img
 firebaserc
 firebase.json
