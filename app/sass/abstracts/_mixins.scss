@@ -5,3 +5,43 @@
     clear: both;
   }
 }
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY
+/* 
+mobile = 600px
+tab-port = 900px
+tab-land = 1200px
+desktop = 1800px
+
+1em = 16px (browser font-size)
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
